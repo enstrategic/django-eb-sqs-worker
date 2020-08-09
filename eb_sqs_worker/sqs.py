@@ -17,8 +17,8 @@ except AttributeError:
 # TODO: make it lazy so we can run tests without setting this settings?
 sqs = boto3.resource('sqs',
                      region_name=AWS_REGION,
-                     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-                     aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+                     aws_access_key_id=settings.AWS_SQS_ACCESS_KEY_ID,
+                 aws_secret_access_key=settings.AWS_SQS_SECRET_ACCESS_KEY)
 
 
 def send_task(task_name, task_kwargs, run_locally=None, queue_name=None):
